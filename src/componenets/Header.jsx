@@ -3,7 +3,7 @@ import logo from '../images/Logo.svg';
 
 const Header = () => {
   return (
-    <div className="bg-[#351c21] h-20 w-screen grid">
+    <nav className="bg-[#1C2B35] h-20 w-screen grid">
       <div className=" flex justify-between items-center px-24">
         <div>
           <img src={logo} alt="logo" />
@@ -23,7 +23,7 @@ const Header = () => {
           </a>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
