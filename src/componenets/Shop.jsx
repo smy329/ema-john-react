@@ -44,8 +44,20 @@ const Shop = () => {
   // }, [products]);
 
   const handleAddToCart = (product) => {
-    //   we can create new array like this 'const newArr = [...prevArr, newElement]'
-    const newCart = [...cart, product];
+    // we can create new array like this 'const newArr = [...prevArr, newElement]'
+    let newCart = [];
+
+    //if product doesn't exist in the cart, then set quantity = 1
+    //if exist upadate the quantity by 1
+    const exists = cart.find((pd) => pd.id === product.id);
+    if (!exists) {
+      product.quantity = 1;
+      newCart = [...cart, product];
+    } else {
+      exists.quantity = exists.quantity + 1;
+      const remaining = cart.filter((pd) => pd.id !== product.id);
+      newCart = [...remaining, exists];
+    }
     setCart(newCart);
     addToDb(product.id);
   };
