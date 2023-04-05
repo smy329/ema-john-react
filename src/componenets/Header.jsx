@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../images/Logo.svg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -9,18 +10,22 @@ const Header = () => {
           <img src={logo} alt="logo" />
         </div>
         <div>
-          <a className="text-white hover:text-amber-500 mx-4" href="/order">
-            Order
-          </a>
-          <a className="text-white hover:text-amber-500 mx-4" href="/review">
-            Order Review
-          </a>
-          <a className="text-white hover:text-amber-500 mx-4" href="/inventory">
+          <Link className="text-white hover:text-amber-500 mx-4" to="/shop">
+            Shop
+          </Link>
+          <Link className="text-white hover:text-amber-500 mx-4" to="/orders">
+            Orders
+          </Link>
+
+          <Link
+            className="text-white hover:text-amber-500 mx-4"
+            to="/inventory"
+          >
             Manager Inverntory
-          </a>
-          <a className="text-white hover:text-amber-500 mx-4" href="/login">
+          </Link>
+          <Link className="text-white hover:text-amber-500 mx-4" to="/login">
             Login
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
